@@ -1,24 +1,29 @@
 // ---------------- Interatividade ---------------------
 
 
-function calculo(tipo,valor){
+function calculo(tipo, objeto){
   if (tipo === 'acao') {
-    if (valor === 'c') {
+    
+    if (objeto === 'c') {
       document.getElementById('resultado').value = ''
     }
-    if(valor === '+' || valor === '-' || valor === '/' || valor === '*' || valor === '.'){
-      document.getElementById('resultado').value +=' '+valor+' '
+    if(objeto === '+' || objeto === '-' || objeto === '/' || objeto === '*' || objeto === '.'){
+      document.getElementById('resultado').value +=' '+objeto+' '
     }
     
 
-    if (valor === '=' ) {
+    if (objeto === '=' ) {
 
       var valor_campo = eval(document.getElementById('resultado').value)
       console.log(valor_campo) //eval funciona como oprerações aritméticas no console.
       document.getElementById('resultado').value = valor_campo
     }
+
+    
   }
+
   else if(tipo === 'valor'){
-      document.getElementById('resultado').value += valor
+
+      document.getElementById('resultado').value += objeto
   }
 }
